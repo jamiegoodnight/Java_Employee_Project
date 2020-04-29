@@ -29,6 +29,7 @@ public class Employee {
     }
 
     // ------ methods - getters and setters
+    // Look into switch?
     public void setFname(String fname)
     {
         this.fname = fname;

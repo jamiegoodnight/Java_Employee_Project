@@ -106,4 +106,14 @@ public class Employee {
     {
         return fname + " " + lname;
     }
+
+    // Object -> Employee
+    // Inside Object there is a method called toString inside of Object.
+    @Override
+    public String toString()
+    {
+        String rtnStr = "id:" + id + "\n" +
+                        "fname: " + fname + "\n";
+        return rtnStr;
+    }
 }

@@ -5,6 +5,7 @@ public class Employee {
     // base types in Java are lowercase. Strings are classes dervied from char
     // and capitalized 
 
+    private static int maxId = 0;
     private int id;
     private String fname;
     private String lname;
@@ -19,7 +20,9 @@ public class Employee {
     // constructor -- instatiates the state of object
 
     public Employee(String fname, String lname, double salary, boolean has401k, int companyId, int healthPlanId)
-    {
+    {   
+        maxId++;
+        id=maxId;
         this.fname = fname;
         this.lname = lname;
         this.salary = salary;
@@ -30,6 +33,11 @@ public class Employee {
 
     // ------ methods - getters and setters
     // Look into switch?
+    public int getId()
+    {
+        return id;
+    }
+
     public void setFname(String fname)
     {
         this.fname = fname;
@@ -97,5 +105,15 @@ public class Employee {
     public String getName()
     {
         return fname + " " + lname;
+    }
+
+    // Object -> Employee
+    // Inside Object there is a method called toString inside of Object.
+    @Override
+    public String toString()
+    {
+        String rtnStr = "id:" + id + "\n" +
+                        "fname: " + fname + "\n";
+        return rtnStr;
     }
 }
